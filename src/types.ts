@@ -9,6 +9,7 @@ const strArr2: Array<string> = ['Hi', 'My']; // generic
 
 const intArr: number[] = [10, 20, 30]; // number array
 const intArr2: Array<number> = [10, 20, 30]; // generic
+const intArr3: Array<any> = [10, 'string', 30]; // generic
 
 const contacts: [string, number] = ['Dmitriy', 89234815507]; // tuple - кортеж
 
@@ -27,6 +28,10 @@ function infinite():never { // never
   while(true) {
     console.log('Infinity');    
   }
+}
+
+function showObject(obj: object):void { // object
+  console.log(obj);
 }
 
 type Login = string; // type

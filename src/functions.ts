@@ -1,10 +1,17 @@
 // Functions
 // Function Declaration
-function funcDeclar(a: number): number[] {
+function funcDeclar(a: number, b?: number): number[] {
+  if (b) {
+    return [b ** 2];
+  }
   return [a ** 2];
 }
 console.log(funcDeclar(10));
 
+// rest
+function showArgs(a: string, ...rest: Array<string>):void{
+  console.log(a, ...rest);  
+}
 
 // Function Expression
 const funcExp = function (x: number): boolean {
@@ -41,3 +48,13 @@ console.log(arrFunc4(500));
 // Void - пустота. Т.е. ожидается, что функция ничего не вернет (нет return)
 const logNumber = (x: number): void => console.log(x);
 console.log(654);
+
+
+// Function type description
+let myFunc: (firstArg: string) => void;
+
+function oldFunc(name: string):void {
+    alert(`Hello ${name}, nice to see you!`);
+};
+
+myFunc = oldFunc;
